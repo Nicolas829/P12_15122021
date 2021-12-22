@@ -1,0 +1,84 @@
+.top-bar{
+    box-sizing: border-box;
+    width:auto;
+    height:8em;
+    background-color: black;   
+    display: flex;
+    
+}
+
+.liste-top-bar{
+
+    display:flex;
+    color:white;
+    font-size: 2em;
+    gap:8em;
+    justify-content: space-between;
+    align-items: center;
+    list-style:none;
+    margin-left:4em;
+}
+
+
+
+.logo{
+   margin-left:2em;
+   height:4em;
+   width:15em;
+    align-self: center;
+    
+}
+
+.sidebar {
+    float: left;
+   position:absolute;
+    box-sizing:auto;
+    width:8em;
+    background-color: black;
+    height:55em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+   
+}
+.nav {
+    width:5em;
+    height:20em;  
+   
+}
+.copyright {
+    margin-top:10em;
+    color:white;
+    transform:rotate(270deg);
+    width:15em;
+}
+.titre-accueil {    
+    font-size:3em;
+    width:100%;
+   
+    font-weight: 500;
+}
+.firstname{
+    color:red;
+}
+.accueil {
+    margin-top:3em;
+    margin-left:15em;
+}
+.felicitation {
+    font-size:18px;
+}
+
+.recharts-responsive-container{
+ 
+   position:absolute;
+   margin-left:15em;
+    margin-top:2em;
+}
+.average-radar-score{
+    display: flex;
+    
+}
+
+    

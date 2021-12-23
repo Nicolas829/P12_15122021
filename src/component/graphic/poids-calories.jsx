@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import {  BarChart, Bar,  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import {  Rectangle, BarChart, Bar,  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Dot, Curve, Polygon } from 'recharts';
 
 
         
@@ -10,10 +10,12 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width="40%" height="30%" >
+      <div style={{ width:"60em", height:"20em"}}>
+      <ResponsiveContainer width="100%" height="100%" barCategoryGap="20%">
         <BarChart
-          width={500}
-          height={300}
+        
+         barCategoryGap="20%"
+         barSize={10}
           data={this.props.userActivity}
           margin={{
             top: 5,
@@ -22,15 +24,16 @@ export default class Example extends PureComponent {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="day" />
-          <YAxis domain={[0, '100']} />
+          <CartesianGrid strokeDasharray=" 0"  vertical=""/>
+          <XAxis dataKey="day"  minTickGap="true"/>
+          <YAxis interval={1}  orientation="right" />
           <Tooltip />
           <Legend />
-          <Bar dataKey="kilogram" fill="#282D30"  />
-          <Bar dataKey="calories" fill="#E60000" barGap="15" barCategoryGap="30"  />
+          <Bar dataKey="kilogram" fill="#282D30" shape={<Rectangle radius="20" x="20"/>} />
+          <Bar dataKey="calories" fill="#E60000" />
         </BarChart>
       </ResponsiveContainer>
+      </div>
     );
   }
 }

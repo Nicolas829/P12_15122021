@@ -8,13 +8,13 @@ export default class Average extends PureComponent {
 
   render() {
     return (
-      <div style={{ width: '30%', height: 200, position:"relative", marginTop:"20em",  }}>
+      <div style={{ width:"30%", }}>
         <ResponsiveContainer >
           <AreaChart
             data={this.props.averageSessions}
             margin={{
-              top: 10,
-              right: 30,
+              top: 0,
+              right: 0,
               left: 0,
               bottom: 0,
             }}

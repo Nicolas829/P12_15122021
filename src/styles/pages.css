@@ -70,15 +70,29 @@
     font-size:18px;
 }
 
-.recharts-responsive-container{
- 
-   position:absolute;
-   margin-left:15em;
-    margin-top:2em;
+
+.container-graph-data{
+    display:flex;   
+    justify-content: flex-start;   
+    border:solid black;
+}
+.container-graph{
+    display: flex;
+    flex-direction:column;
+    border: solid red;
+    margin-left: 15em;
+}
+.graph-pds-cal{
+    box-sizing: content-box;
+    
 }
 .average-radar-score{
     display: flex;
-    
+    height:18em;
+    width:60em;
+    gap:2em;
 }
+
+
 
     

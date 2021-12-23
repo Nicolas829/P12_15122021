@@ -32,7 +32,7 @@ export default class Page extends Component {
         .then((data)=> {
             this.setState({
                dataUserInfos:data.userInfos,              
-               keyData:data.keyData,            
+               keyData:data.keyData,           
               
             })
         })     
@@ -47,10 +47,10 @@ export default class Page extends Component {
           
             this.setState({
                 listeKind:data.kind,         
-                userPerformance:data.data,               
+                dataPerformance:data.data,               
                 
             })
-            const newKind = this.state.userPerformance           
+            const newKind = this.state.dataPerformance        
             newKind.map(
                 (item, index)=>{
                     if(item.kind===index+1){
@@ -72,15 +72,23 @@ export default class Page extends Component {
     }
     
     render (){console.log(this.state.userPerformance)
-      return ( <div >
+      return ( 
+      <div >
         <Header />
         <Accueil userInfos={this.state.dataUserInfos}  />
-        <Example userActivity={this.state.userActivity} />
-        <div class="average-radar-score">
-            <Average averageSessions={this.state.userAverage} />
-            <RadarGrah userPerformance={this.state.userPerformance} />
+        <div class="container-graph-data">
+            <div class="container-graph">
+                <div class="graph-pds-cal">
+                    <Example userActivity={this.state.userActivity} />
+                </div>
+                <div class="average-radar-score">
+                    <Average averageSessions={this.state.userAverage} />
+                    <RadarGrah userPerformance={this.state.userPerformance} />
+
+                </div>
+             </div>
         </div>
-        </div>
+    </div>
          )
     }
   }

@@ -5,18 +5,19 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 
 export default class RadarGrah extends PureComponent {
     
-
-  render() {
+  
+  render() {console.log(this.props.userPerformance)
     return (
-    <div style={{ width: '100%', height: 300, position:"relative", marginTop:"17em", marginLeft:"-15em",  }}>
-
-      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={this.props.userPerformance}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="kind" />
-          <PolarRadiusAxis />
-          <Radar name="Mike" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+      <div style={{ backgroundColor:"#282D30", width:"30%",  borderRadius:"5px", padding:"20px", overflow:"visible",  }}>
+      <ResponsiveContainer width="100%" height="100%" >
+        
+        <RadarChart  legendType="none" data={this.props.userPerformance} fill="#282D30" cx="50%" cy="50%" outerRadius="80%">
+          <PolarGrid  radialLines={false}  />
+          <PolarAngleAxis  dataKey="kind"  tick={{fill:"white",fontSize:"0.8em"}}/>
+          <PolarRadiusAxis angle={0}  tickCount={6} tick={{fill:"white"}} />
+          <Radar dataKey="value" legendType='square' fill="#FF0000" fillOpacity={0.6} />
         </RadarChart>
+       
       </ResponsiveContainer>
       </div>
     );

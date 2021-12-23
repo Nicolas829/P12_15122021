@@ -74,12 +74,12 @@
 .container-graph-data{
     display:flex;   
     justify-content: flex-start;   
-    border:solid black;
+    
 }
 .container-graph{
     display: flex;
     flex-direction:column;
-    border: solid red;
+   
     margin-left: 15em;
 }
 .graph-pds-cal{

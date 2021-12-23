@@ -27,7 +27,7 @@ export default class Page extends Component {
           
     }
     componentDidMount(){ 
-        const url="12"; //url = userid 
+        const url="18"; //url = userid 
         getUser(url)     
         .then((data)=> {
             this.setState({

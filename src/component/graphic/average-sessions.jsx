@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Label, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Line, Legend } from 'recharts';
 
 
 
@@ -8,9 +8,10 @@ export default class Average extends PureComponent {
 
   render() {
     return (
-      <div style={{ width:"30%", }}>
-        <ResponsiveContainer >
+      <div style={{ width:"30%", backgroundColor:"#FF0000", borderRadius:"5px"}}>
+        <ResponsiveContainer width="100%" >
           <AreaChart
+        
             data={this.props.averageSessions}
             margin={{
               top: 0,
@@ -18,15 +19,21 @@ export default class Average extends PureComponent {
               left: 0,
               bottom: 0,
             }}
+          
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" />
-            <YAxis />
+            <CartesianGrid  horizontal="" vertical="" />
+            <XAxis axisLine={false} tickLine={false} dataKey="day" tick={{fill:"white",fontSize:"0.8em"}} tick={<Label  position="insideBottom" />} />
+            {/*essaye LABEL */}
+                        
             <Tooltip />
-            <Area type="monotone" dataKey="sessionLength" stroke="#8884d8" fill="#8884d8" />
+            <Area  orientation="insideBottom" type="natural" dataKey="sessionLength" stroke="white" strokeWidth={2} fill="white" fillOpacity={0.20} />
           </AreaChart>
         </ResponsiveContainer>
       </div>
     );
   }
 }
+
+// background color rright #FF0000
+//background color bottom 
+//background color top

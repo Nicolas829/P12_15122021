@@ -95,4 +95,66 @@
 
 
 
+.titre-average{
+    position:absolute;
+    width:10%;
+   
+    margin-left:2em;
+    margin-top: 2em;
+    font-weight: 400;
+    color:white;
+    Opacity: 50.4%;
+}
+  
+
+.container-barChart {
+    background-color: #FBFBFB;
+    border-radius: 10px;
+   
+}
+.header-barChart{
+    position:absolute;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2em;
+    box-sizing: border-box;
+    width:60em;
+
+}
+.legend{
+    display: flex;
+    gap:5em;
+    margin-right: 5em;
     
+
+}
+.poids{
+    display: flex;
+  
+
+}
+
+.blackPoint{
+    margin-top: -0.5em;
+   font-size: 5em;
+  
+    
+}
+.redPoint{
+    margin-top: -0.5em;
+    font-size: 5em;
+    color:#E60000;
+   
+}
+.calories{
+    display:flex;
+}
+.custom-tooltip{
+    display:flex;
+    flex-direction: column;
+    padding:0.5em;
+    align-items: center;
+    color:white;
+    font-size:0.7em;
+   
+}

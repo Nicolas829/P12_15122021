@@ -3,7 +3,7 @@ import {getUser,  getAverageSessions, getPerformance, getActivity} from '../Serv
 import React from 'react';
 import Header from '../component/header';
 import Accueil from '../component/accueil';
-import Example from '../component/graphic/poids-calories';
+import PoidsCalories from '../component/graphic/poids-calories';
 import PropTypes from 'prop-types'
 import Average from '../component/graphic/average-sessions';
 import "../styles/pages.css"
@@ -71,7 +71,7 @@ export default class Page extends Component {
         })    
     }
     
-    render (){console.log(this.state.userPerformance)
+    render (){console.log(this.state.userAverage)
       return ( 
       <div >
         <Header />
@@ -79,7 +79,7 @@ export default class Page extends Component {
         <div class="container-graph-data">
             <div class="container-graph">
                 <div class="graph-pds-cal">
-                    <Example userActivity={this.state.userActivity} />
+                    <PoidsCalories userActivity={this.state.userActivity} />
                 </div>
                 <div class="average-radar-score">
                     <Average averageSessions={this.state.userAverage} />

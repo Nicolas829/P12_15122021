@@ -9,19 +9,19 @@ export default class header extends Component {
     render (){
         return(
     <div>
-        <div class="top-bar">
-            <img src={logo} class="logo"></img>
-            <ul class="liste-top-bar">                
-                <li class="liste">Accueil</li>
-                <li class="liste">Profil</li>
-                <li class="liste">Réglage</li>
-                <li class="liste">Communauté</li>
+        <div className="top-bar">
+            <img src={logo} className="logo"></img>
+            <ul className="liste-top-bar">                
+                <li className="liste">Accueil</li>
+                <li className="liste">Profil</li>
+                <li className="liste">Réglage</li>
+                <li className="liste">Communauté</li>
             </ul>
 
         </div>
-        <aside class="sidebar">
-        <img src={nav} class="nav" />
-        <p class="copyright"> Copyright, SportSee 2020</p>
+        <aside className="sidebar">
+        <img src={nav} className="nav" />
+        <p className="copyright"> Copyright, SportSee 2020</p>
         </aside>
     </div>
    )

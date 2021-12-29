@@ -1,0 +1,33 @@
+.top-bar {
+  box-sizing: border-box;
+  width: auto;
+  height: 6em;
+  background-color: black;
+  display: flex;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.liste-top-bar {
+  display: flex;
+  color: white;
+  font-size: 24px;
+  gap: 12em;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin-left: 4em;
+ 
+}
+.liste{
+cursor: pointer;
+
+}
+.liste:hover{
+    color:#FF0000;
+}
+.logo {
+  margin-left: 2em;
+  height: 4em;
+  width: 15em;
+  align-self: center;
+}

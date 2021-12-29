@@ -4,9 +4,8 @@ import {
   getUser,
   getAverageSessions,
   getPerformance,
-  getActivity
+  getActivity,
 } from '../Services/Api'
-
 import Header from '../component/header'
 import Accueil from '../component/accueil'
 import PoidsCalories from '../component/graphic/poids-calories'
@@ -15,9 +14,11 @@ import Average from '../component/graphic/average-sessions'
 import '../styles/pages.css'
 import RadarGrah from '../component/graphic/radar'
 import PieScore from '../component/graphic/pieChart'
+import ContainerBoxChiffre from '../component/container-box-chiffre'
+import SideBar from '../component/sideBar'
 
 export default class Page extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       dataUserInfos: [],
@@ -26,27 +27,27 @@ export default class Page extends Component {
       userActivity: [],
       userAverage: [],
       listeKind: [],
-      data: []
+      data: [],
     }
   }
-  componentDidMount () {
+  componentDidMount() {
     const url = '18' //url = userid
-    getUser(url).then(data => {
+    getUser(url).then((data) => {
       this.setState({
         data: data,
         dataUserInfos: data.userInfos,
-        keyData: data.keyData
+        keyData: data.keyData,
       })
     })
-    getAverageSessions(url).then(data => {
+    getAverageSessions(url).then((data) => {
       this.setState({
-        userAverage: data.sessions
+        userAverage: data.sessions,
       })
     })
-    getPerformance(url).then(data => {
+    getPerformance(url).then((data) => {
       this.setState({
         listeKind: data.kind,
-        dataPerformance: data.data
+        dataPerformance: data.data,
       })
       const newKind = this.state.dataPerformance
       newKind.map((item, index) => {
@@ -55,32 +56,36 @@ export default class Page extends Component {
         }
       })
       this.setState({
-        userPerformance: newKind
+        userPerformance: newKind,
       })
     })
 
-    getActivity(url).then(data => {
+    getActivity(url).then((data) => {
       this.setState({
-        userActivity: data.sessions
+        userActivity: data.sessions,
       })
     })
   }
 
-  render () {
+  render() {
     return (
       <div>
         <Header />
+        <SideBar />
         <Accueil userInfos={this.state.dataUserInfos} />
-        <div className='container-graph-data'>
-          <div className='container-graph'>
-            <div className='graph-pds-cal'>
+        <div className="container-graph-data">
+          <div className="container-graph">
+            <div className="graph-pds-cal">
               <PoidsCalories userActivity={this.state.userActivity} />
             </div>
-            <div className='average-radar-score'>
+            <div className="average-radar-score">
               <Average averageSessions={this.state.userAverage} />
               <RadarGrah userPerformance={this.state.userPerformance} />
               <PieScore data={this.state.data} />
             </div>
+          </div>
+          <div className="container-box-chiffre">
+            <ContainerBoxChiffre keyData={this.state.keyData} />
           </div>
         </div>
       </div>
@@ -95,5 +100,5 @@ Page.propTypes = {
   day: PropTypes.array,
   userActivity: PropTypes.array,
   userAverage: PropTypes.array,
-  listeKind: PropTypes.array
+  listeKind: PropTypes.array,
 }

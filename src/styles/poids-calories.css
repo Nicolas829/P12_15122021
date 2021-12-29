@@ -2,6 +2,7 @@
     background-color: #FBFBFB;
     border-radius: 10px;   
 }
+
 .header-barChart{
     position:absolute;
     display: flex;
@@ -10,11 +11,13 @@
     box-sizing: border-box;
     width:60em;
 }
+
 .legend{
     display: flex;
     gap:5em;
     margin-right: 5em;
 }
+
 .poids{
     display: flex;
 }
@@ -23,14 +26,22 @@
    margin-top: -0.5em;
    font-size: 5em;     
 }
+
 .redPoint{
     margin-top: -0.5em;
     font-size: 5em;
     color:#E60000;   
 }
+
 .calories{
-    display:flex;
+    display:flex;   
 }
+
+h4{
+ color: #74798c;
+ font-weight: 500;
+}
+
 .custom-tooltip{
     display:flex;
     flex-direction: column;

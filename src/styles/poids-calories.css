@@ -11,12 +11,16 @@
     box-sizing: border-box;
     width:60em;
 }
+.titre-activite-quotidienne{
+    font-weight: 500;
+}
 
 .legend{
     display: flex;
     gap:5em;
     margin-right: 5em;
 }
+
 
 .poids{
     display: flex;

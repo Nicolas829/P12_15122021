@@ -31,7 +31,8 @@ export default class Page extends Component {
     }
   }
   componentDidMount() {
-    const url = '18' //url = userid
+    const url = window.location.pathname.replace('/', '') //url = userid
+    console.log(url)
     getUser(url).then((data) => {
       this.setState({
         data: data,

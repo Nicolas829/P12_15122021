@@ -8,6 +8,11 @@ import {
 } from 'recharts'
 
 export default class RadarGrah extends PureComponent {
+  /**
+   * @param {object} userPerformance
+   *
+   * @returns graph Radar
+   */
   render() {
     return (
       <div

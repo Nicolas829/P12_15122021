@@ -3,7 +3,10 @@ import { Component } from 'react'
 
 export default class Accueil extends Component {
   render() {
-    console.log(this.props.userInfos)
+    /**
+     * @param {object} userInfos
+     * @return section titre
+     */
     return (
       <div className="accueil">
         <h1 className="titre-accueil">

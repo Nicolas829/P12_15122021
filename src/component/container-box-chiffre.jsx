@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import reactDom from 'react-dom'
+
 import '../styles/container-box-chiffres.css'
 import calories from '../assets/calories.svg'
 import proteines from '../assets/proteines.svg'
@@ -8,40 +8,56 @@ import glucides from '../assets/glucides.svg'
 import lipides from '../assets/lipides.svg'
 
 export default class ContainerBoxChiffre extends Component {
+  /**
+   * @param {object} keyData
+   * @param {string} keyData.calorieCount
+   * @param {string} keyData.lipidCount
+   * @param {string} keyData.carbohydrateCount
+   * @param {string} keyData.proteinCount
+   * @param {img} natation
+   * @param {img} velo
+   * @param {img} halteres
+   * @param {img} meditation
+   * @param {number} Kcal
+   * @returns
+   */
   render() {
-    console.log(this.props.keyData)
+    const kCal = new Intl.NumberFormat('en-IN', {
+      maximumSignificantDigits: 3,
+    }).format(this.props.keyData.calorieCount)
+
     return (
       <div className="main-container-chiffre">
-        <div class="box-data">
+        <div className="box-data">
           <div className="box-cal">
-            <img src={calories} className="img" />
+            <img src={calories} alt="calories" className="img" />
           </div>
           <div className="texte">
-            <h1>{this.props.keyData.calorieCount}kCal</h1>
+            <h1>{kCal}kCal</h1>
             <p className="keyData-text">Calories</p>
           </div>
         </div>
-        <div class="box-data">
+        <div className="box-data">
           <div className="box-proteines">
-            <img src={proteines} className="img" />
+            <img src={proteines} alt="proteines" className="img" />
           </div>
           <div>
             <h1>{this.props.keyData.proteinCount}g</h1>
             <p className="keyData-text">Protéines</p>
           </div>
         </div>
-        <div class="box-data">
+        <div className="box-data">
           <div className="box-glucides">
-            <img src={glucides} className="img" />
+            <img src={glucides} alt="glucides" className="img" />
           </div>
           <div>
             <h1>{this.props.keyData.carbohydrateCount}g</h1>
             <p className="keyData-text">Glucides</p>
           </div>
         </div>
-        <div class="box-data">
+        <div className="box-data">
           <div className="box-lipides">
-            <img src={lipides} className="img" />
+            <img src={lipides} alt="lipides" className="img" />
           </div>
           <div>
             <h1>{this.props.keyData.lipidCount}g</h1>

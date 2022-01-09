@@ -53,8 +53,9 @@ export default class Page extends Component {
       const newKind = this.state.dataPerformance
       newKind.map((item, index) => {
         if (item.kind === index + 1) {
-          item.kind = this.state.listeKind[index + 1]
+          return (item.kind = this.state.listeKind[index + 1])
         }
+        return item.kind
       })
       this.setState({
         userPerformance: newKind,
@@ -82,7 +83,7 @@ export default class Page extends Component {
             <div className="average-radar-score">
               <Average averageSessions={this.state.userAverage} />
               <RadarGrah userPerformance={this.state.userPerformance} />
-              <PieScore data={this.state.data} />
+              <PieScore userData={this.state.data} />
             </div>
           </div>
           <div className="container-box-chiffre">

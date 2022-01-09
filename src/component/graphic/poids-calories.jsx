@@ -11,6 +11,15 @@ import {
 import '../../styles/poids-calories.css'
 
 export default class PoidsCalories extends PureComponent {
+  /**
+   * @param {object} userActivty
+   * @param {array}  data
+   * @param {data option} day
+   * @param {data option} item
+   * @param {data option} kilogram
+   * @returns graph poids-calories
+   */
+
   render() {
     const data = []
     this.props.userActivity.map((item) =>
@@ -55,7 +64,7 @@ export default class PoidsCalories extends PureComponent {
               width={790}
               height={200}
               vertical={false}
-              overflow="hidden"
+              horizontalPoints={[80, 180, 285]}
             />
             <XAxis
               axisLine={false}
@@ -68,11 +77,15 @@ export default class PoidsCalories extends PureComponent {
               tickLine={false}
               axisLine={false}
               orientation="right"
-              domain={['dataMin-1', 'dataMax+1']}
-              interval={1}
+              domain={['dataMin-1', 'dataMax+2']}
               dataKey="kilogram"
+              key="kilogram"
+              interval={1}
               name="kg"
               yAxisId="kg"
+              tickFormatter={(value) => {
+                return Math.round(value)
+              }}
             />
             <YAxis
               orientation="right"

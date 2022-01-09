@@ -22,6 +22,10 @@ function formatXAxis(value) {
 }
 
 export default class Average extends PureComponent {
+  /**
+   * @param {object} averageSessions
+   * @returns graph Average
+   */
   render() {
     return (
       <div

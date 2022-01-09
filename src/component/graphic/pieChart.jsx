@@ -3,16 +3,30 @@ import { PieChart, Pie } from 'recharts'
 import '../../styles/pieChart.css'
 
 export default class PieScore extends PureComponent {
+  /**
+   * @param {object} userData
+   * @param {array} data01 score pourcent
+   * @param {array} data02 100% - score pourcent
+   * @param {string} score || todayScore
+   * @param {string} scorePourcent
+   * @returns graph Pie
+   */
   render() {
     const data01 = []
     const data02 = []
-
+    let score = ''
+    if (this.props.userData.score === undefined) {
+      score = this.props.userData.todayScore
+    } else {
+      score = this.props.userData.score
+    }
+    console.log(score)
     data01.push({
-      score: this.props.data.score,
+      score: score,
       fill: 'red',
     })
     data01.push({
-      score: 1 - this.props.data.score,
+      score: 1 - score,
       fill: 'transparent',
       stroke: 'transparent',
     })
@@ -24,7 +38,7 @@ export default class PieScore extends PureComponent {
       strokeWidth: '18',
     })
 
-    const score = this.props.data.score * 100
+    const scorePourcent = score * 100
 
     return (
       <div
@@ -66,7 +80,7 @@ export default class PieScore extends PureComponent {
             dominantBaseline="middle"
             className="pourcentage"
           >
-            {score}%
+            {scorePourcent}%
           </text>
           <text
             x="35%"

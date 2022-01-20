@@ -5,7 +5,7 @@ import '../../styles/pieChart.css'
 export default class PieScore extends PureComponent {
   /**
    * @param {object} userData
-   * @param {array} data01 score pourcent
+   * @param {array} data01 score pourcent user
    * @param {array} data02 100% - score pourcent
    * @param {string} score || todayScore
    * @param {string} scorePourcent
@@ -20,7 +20,7 @@ export default class PieScore extends PureComponent {
     } else {
       score = this.props.userData.score
     }
-    console.log(score)
+
     data01.push({
       score: score,
       fill: 'red',

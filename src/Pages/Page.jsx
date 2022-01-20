@@ -1,11 +1,7 @@
 import React from 'react'
 import { Component } from 'react'
-import {
-  getUser,
-  getAverageSessions,
-  getPerformance,
-  getActivity,
-} from '../Services/Api'
+import Api from '../Services/Api'
+import mockData from '../Services/mockData'
 import Header from '../component/header'
 import Accueil from '../component/accueil'
 import PoidsCalories from '../component/graphic/poids-calories'
@@ -20,6 +16,10 @@ import SideBar from '../component/sideBar'
 export default class Page extends Component {
   constructor(props) {
     super(props)
+    this.urlId = window.location.pathname.replace('/', '') //url = userid
+
+    this.dataSource = new Api()
+    console.log(this.dataSource.getUser())
     this.state = {
       dataUserInfos: [],
       keyData: [],
@@ -30,25 +30,25 @@ export default class Page extends Component {
       data: [],
     }
   }
+
   componentDidMount() {
-    const url = window.location.pathname.replace('/', '') //url = userid
-    console.log(url)
-    getUser(url).then((data) => {
+    this.dataSource.getUser(this.urlId).then((userData) => {
+      console.log(userData)
       this.setState({
-        data: data,
-        dataUserInfos: data.userInfos,
-        keyData: data.keyData,
+        data: userData.data,
+        dataUserInfos: userData.data.userInfos,
+        keyData: userData.keyData,
       })
     })
-    getAverageSessions(url).then((data) => {
+    this.dataSource.getAverageSessions(this.urlId).then((AverageData) => {
       this.setState({
-        userAverage: data.sessions,
+        userAverage: AverageData.sessions,
       })
     })
-    getPerformance(url).then((data) => {
+    this.dataSource.getPerformance(this.urlId).then((PerformanceData) => {
       this.setState({
-        listeKind: data.kind,
-        dataPerformance: data.data,
+        listeKind: PerformanceData.kind,
+        dataPerformance: PerformanceData.data,
       })
       const newKind = this.state.dataPerformance
       newKind.map((item, index) => {
@@ -62,14 +62,15 @@ export default class Page extends Component {
       })
     })
 
-    getActivity(url).then((data) => {
+    this.dataSource.getActivity(this.urlId).then((ActivityData) => {
       this.setState({
-        userActivity: data.sessions,
+        userActivity: ActivityData.sessions,
       })
     })
   }
 
   render() {
+    console.log(this.state.data)
     return (
       <div>
         <Header />

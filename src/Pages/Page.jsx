@@ -17,7 +17,7 @@ export default class Page extends Component {
   constructor(props) {
     super(props)
     this.urlId = window.location.pathname.replace('/', '') //url = userid
-    this.dataSource = new mockData()
+    this.dataSource = new Api()
     this.state = {
       dataUserInfos: [],
       keyData: [],

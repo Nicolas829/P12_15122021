@@ -9,7 +9,16 @@ export default class Api {
     return fetch(`http://localhost:3000/user/` + urlId)
       .then((response) => response.json())
       .then((data) => data.data)
-      .then((data) => new userData(data, data.userInfos, data.keyData))
+      .then(
+        (data) =>
+          new userData(
+            data,
+            data.userInfos,
+            data.keyData,
+            data.score,
+            data.todayScore,
+          ),
+      )
   }
 
   async getActivity(urlId) {

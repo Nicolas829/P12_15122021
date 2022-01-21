@@ -1,10 +1,10 @@
-# Projet 12 --- Sportsee
+# Project 12 --- Sportsee
 
-Projet 12 of openclassrooms training courses 'developer Front-End'
+Project 12 of openclassrooms training courses 'developer Front-End'
 
 # objectives
 
-develop a dashboard for the users of website sportsee with the data of their training session
+develop a dashboard for the users of the sportsee website with the data of their training sessions
 
 # Prerequisites
 
@@ -15,11 +15,12 @@ develop a dashboard for the users of website sportsee with the data of their tra
 
 # installation
 
+- for the API : go to https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard and follow the instructions
 - Fork the repository
-- clone it on computer
-- launch "yarn dev" from the file API
-- launch "yarn start" from the file sportsee
+- Clone it on your computer
+- Launch "yarn start" from the src sportSee file
 
 # navigation
 
-- change id after url (12 or 18)
+- to change dataSource, go to line 20 on the src/Pages/Pages, switch Api or mockData in this.dataSource = new ...()
+- if you use Api Source, change id after url (12 or 18)

@@ -6,12 +6,12 @@ export const userInfo = {
             "lastName": "Lebordais",
             "age": 40
         },
-        "todayScore": 0.12,
+        "todayScore": 0.80,
         "keyData": {
-            "calorieCount": 1,
-            "proteinCount": 2,
-            "carbohydrateCount": 3,
-            "lipidCount": 4
+            "calorieCount": 1200,
+            "proteinCount": 200,
+            "carbohydrateCount": 320,
+            "lipidCount": 400
         }
     }
 }

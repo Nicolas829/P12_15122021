@@ -9,27 +9,16 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import '../../styles/poids-calories.css'
+import PropTypes from 'prop-types'
 
 export default class PoidsCalories extends PureComponent {
   /**
-   * @param {object} userActivty
-   * @param {array}  data
-   * @param {data option} day
-   * @param {data option} item
-   * @param {data option} kilogram
+   * @param {object} userActivty   *
    * @returns graph poids-calories
    */
 
   render() {
-    const data = []
-    this.props.userActivity.map((item) =>
-      data.push({
-        day: item.day.charAt(item.day.length - 1),
-        calories: item.calories,
-        kilogram: item.kilogram,
-      }),
-    )
-
+    const data = this.props.userActivity
     return (
       <div
         style={{ width: '60em', height: '20em' }}
@@ -83,9 +72,6 @@ export default class PoidsCalories extends PureComponent {
               interval={1}
               name="kg"
               yAxisId="kg"
-              tickFormatter={(value) => {
-                return Math.round(value)
-              }}
             />
             <YAxis
               orientation="right"
@@ -135,4 +121,8 @@ const CustomTooltip = ({ active, payload }) => {
     )
   }
   return null
+}
+
+PoidsCalories.PropType = {
+  data: PropTypes.array,
 }

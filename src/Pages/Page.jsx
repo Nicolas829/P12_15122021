@@ -17,9 +17,7 @@ export default class Page extends Component {
   constructor(props) {
     super(props)
     this.urlId = window.location.pathname.replace('/', '') //url = userid
-
-    this.dataSource = new Api()
-    console.log(this.dataSource.getUser())
+    this.dataSource = new mockData()
     this.state = {
       dataUserInfos: [],
       keyData: [],
@@ -33,7 +31,6 @@ export default class Page extends Component {
 
   componentDidMount() {
     this.dataSource.getUser(this.urlId).then((userData) => {
-      console.log(userData)
       this.setState({
         data: userData.data,
         dataUserInfos: userData.data.userInfos,
@@ -70,7 +67,7 @@ export default class Page extends Component {
   }
 
   render() {
-    console.log(this.state.data)
+    console.log(this.state.dataUserInfos)
     return (
       <div>
         <Header />

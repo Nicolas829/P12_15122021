@@ -20,11 +20,11 @@ export const averageSessions = {
             },
             {
                 "day": 5,
-                "sessionLength": 0
+                "sessionLength": 65
             },
             {
                 "day": 6,
-                "sessionLength": 0
+                "sessionLength": 55
             },
             {
                 "day": 7,

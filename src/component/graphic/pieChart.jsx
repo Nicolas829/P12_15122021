@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { PieChart, Pie } from 'recharts'
 import '../../styles/pieChart.css'
+import PropTypes from 'prop-types'
 
 export default class PieScore extends PureComponent {
   /**
@@ -15,10 +16,10 @@ export default class PieScore extends PureComponent {
     const data01 = []
     const data02 = []
     let score = ''
-    if (this.props.userData.score === undefined) {
-      score = this.props.userData.todayScore
-    } else {
+    if (this.props.userData.todayScore === undefined) {
       score = this.props.userData.score
+    } else {
+      score = this.props.userData.todayScore
     }
 
     data01.push({
@@ -106,6 +107,11 @@ export default class PieScore extends PureComponent {
       </div>
     )
   }
+}
+PieScore.PropType = {
+  data01: PropTypes.array,
+  data02: PropTypes.array,
+  score: PropTypes.string,
 }
 
 /**/

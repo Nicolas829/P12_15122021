@@ -8,23 +8,23 @@ import { AverageData } from '../models/userAverageModels'
 import { PerformanceData } from '../models/performanceModels'
 
 export default class mockData {
-  async getUser(urlId) {
+  async getUser() {
     const result = await userInfo
     const data = await result.data
 
     return new userData(data, data.userInfos, data.keyData)
   }
-  async getActivity(urlId) {
+  async getActivity() {
     const result = await userActivity
     const data = await result.data
     return new ActivityData(data.sessions)
   }
-  async getAverageSessions(urlId) {
+  async getAverageSessions() {
     const result = await averageSessions
     const data = await result.data
     return new AverageData(data.sessions)
   }
-  async getPerformance(urlId) {
+  async getPerformance() {
     const result = await userPerformance
     const data = await result.data
     return new PerformanceData(data.kind, data.data)

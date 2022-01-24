@@ -28,10 +28,6 @@ export default class Api extends Component {
             data.todayScore,
           ),
       )
-      .catch((err) => {
-        const error = true
-        new userData(error)
-      })
   }
 
   async getActivity(urlId) {

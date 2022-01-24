@@ -26,5 +26,5 @@ develop a dashboard for the users of the sportsee website with the data of their
 
 # navigation
 
-- to change dataSource, go to line 20 on the src/Pages/Pages, switch new Api() or new mockData() in "this.dataSource = new ...()"
+- to change dataSource, go to src/Services/services, switch new Api() or new mockData() in line const dataSource = new ...()
 - if you use Api Source, change id after url (12 or 18)

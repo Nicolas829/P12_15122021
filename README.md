@@ -13,6 +13,10 @@ develop a dashboard for the users of the sportsee website with the data of their
 - react-dom version "17.0.2"
 - recharts version "2.1.8"
 
+# Editeur de texte
+
+-VS Code version 1.63.2
+
 # installation
 
 - for the API : go to https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard and follow the instructions
@@ -22,5 +26,5 @@ develop a dashboard for the users of the sportsee website with the data of their
 
 # navigation
 
-- to change dataSource, go to line 20 on the src/Pages/Pages, switch Api or mockData in this.dataSource = new ...()
+- to change dataSource, go to line 20 on the src/Pages/Pages, switch new Api() or new mockData() in "this.dataSource = new ...()"
 - if you use Api Source, change id after url (12 or 18)

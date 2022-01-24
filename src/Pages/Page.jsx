@@ -12,12 +12,13 @@ import RadarGrah from '../component/graphic/radar'
 import PieScore from '../component/graphic/pieChart'
 import ContainerBoxChiffre from '../component/container-box-chiffre'
 import SideBar from '../component/sideBar'
+import Services from '../Services/services'
 
 export default class Page extends Component {
   constructor(props) {
     super(props)
-    this.urlId = window.location.pathname.replace('/', '') //url = userid
-    this.dataSource = new Api()
+    this.urlId = window.location.pathname.replace('/', '') //url = userid (12 or 18)
+    this.dataSource = Services()
     this.state = {
       dataUserInfos: [],
       keyData: [],
@@ -37,6 +38,7 @@ export default class Page extends Component {
         keyData: userData.keyData,
       })
     })
+
     this.dataSource.getAverageSessions(this.urlId).then((AverageData) => {
       this.setState({
         userAverage: AverageData.sessions,
@@ -67,32 +69,43 @@ export default class Page extends Component {
   }
 
   render() {
-    console.log(this.state.dataUserInfos)
-    return (
-      <div>
-        <Header />
-        <SideBar />
-        <Accueil userInfos={this.state.dataUserInfos} />
-        <div className="container-graph-data">
-          <div className="container-graph">
-            <div className="graph-pds-cal">
-              <PoidsCalories userActivity={this.state.userActivity} />
+    console.log(this.state.data.id)
+    if (this.state.data.id === undefined) {
+      return (
+        <div>
+          <Header />
+          <SideBar />
+          <p className="error">
+            Oups, Nous ne parvenons pas a retrouver vos informations
+          </p>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <Header />
+          <SideBar />
+          <Accueil userInfos={this.state.dataUserInfos} />
+          <div className="container-graph-data">
+            <div className="container-graph">
+              <div className="graph-pds-cal">
+                <PoidsCalories userActivity={this.state.userActivity} />
+              </div>
+              <div className="average-radar-score">
+                <Average averageSessions={this.state.userAverage} />
+                <RadarGrah userPerformance={this.state.userPerformance} />
+                <PieScore userData={this.state.data} />
+              </div>
             </div>
-            <div className="average-radar-score">
-              <Average averageSessions={this.state.userAverage} />
-              <RadarGrah userPerformance={this.state.userPerformance} />
-              <PieScore userData={this.state.data} />
+            <div className="container-box-chiffre">
+              <ContainerBoxChiffre keyData={this.state.keyData} />
             </div>
-          </div>
-          <div className="container-box-chiffre">
-            <ContainerBoxChiffre keyData={this.state.keyData} />
           </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
-
 Page.propTypes = {
   dataUserInfos: PropTypes.array,
   keyData: PropTypes.array,

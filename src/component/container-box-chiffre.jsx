@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import '../styles/container-box-chiffres.css'
 import calories from '../assets/calories.svg'
 import proteines from '../assets/proteines.svg'
@@ -25,6 +25,11 @@ export default class ContainerBoxChiffre extends Component {
     const kCal = new Intl.NumberFormat('en-IN', {
       maximumSignificantDigits: 3,
     }).format(this.props.keyData.calorieCount)
+    const keyData = this.props.keyData
+    const lipidCount = keyData.lipidCount
+    const carbohydrateCount = keyData.carbohydrateCount
+    const proteinCount = keyData.proteinCount
+    const calorieCount = keyData.calorieCount
 
     return (
       <div className="main-container-chiffre">
@@ -42,7 +47,7 @@ export default class ContainerBoxChiffre extends Component {
             <img src={proteines} alt="proteines" className="img" />
           </div>
           <div>
-            <h1>{this.props.keyData.proteinCount}g</h1>
+            <h1>{proteinCount}g</h1>
             <p className="keyData-text">Protéines</p>
           </div>
         </div>
@@ -51,7 +56,7 @@ export default class ContainerBoxChiffre extends Component {
             <img src={glucides} alt="glucides" className="img" />
           </div>
           <div>
-            <h1>{this.props.keyData.carbohydrateCount}g</h1>
+            <h1>{carbohydrateCount}g</h1>
             <p className="keyData-text">Glucides</p>
           </div>
         </div>
@@ -60,11 +65,19 @@ export default class ContainerBoxChiffre extends Component {
             <img src={lipides} alt="lipides" className="img" />
           </div>
           <div>
-            <h1>{this.props.keyData.lipidCount}g</h1>
+            <h1>{lipidCount}g</h1>
             <p className="keyData-text">Lipides</p>
           </div>
         </div>
       </div>
     )
   }
+}
+
+ContainerBoxChiffre.PropType = {
+  keyData: PropTypes.array,
+  lipidCount: PropTypes.number,
+  carbohydrateCount: PropTypes.number,
+  proteinCount: PropTypes.number,
+  calorieCount: PropTypes.number,
 }

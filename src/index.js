@@ -4,9 +4,10 @@ import '../src/styles/index.css';
 import Page from '../src/Pages/Page'
 
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <Page />
+   <Page />  
   </React.StrictMode>,
   document.getElementById('root')
 );

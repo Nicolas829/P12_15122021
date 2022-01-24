@@ -1,48 +1,44 @@
-
-
-.titre-accueil {    
-    font-size:3em;
-    width:100%;   
-    font-weight: 500;
-    display: block;
+.titre-accueil {
+  font-size: 3em;
+  width: 100%;
+  font-weight: 500;
+  display: block;
 }
-.firstname{
-    color:red;
+.firstname {
+  color: red;
 }
 .accueil {
-    margin-top:3em;
-    margin-left:18em;
+  margin-top: 3em;
+  margin-left: 18em;
 }
 .felicitation {
-    font-size:18px;
+  font-size: 18px;
 }
 
-
-.container-graph-data{
-    display:flex;   
-    justify-content: flex-start;   
-    width:90em;    
-    height:37em;   
-    margin-left: 18em;
-    margin-top:3em;
+.container-graph-data {
+  display: flex;
+  justify-content: flex-start;
+  width: 90em;
+  height: 37em;
+  margin-left: 18em;
+  margin-top: 3em;
 }
-.container-graph{
-    display: flex;
-    flex-direction:column;
-    gap:2em;
-   
+.container-graph {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 
-.average-radar-score{
-    display: flex;
-    height:18em;
-    width:60em;
-    gap:2em; 
-    
+.average-radar-score {
+  display: flex;
+  height: 18em;
+  width: 60em;
+  gap: 2em;
 }
 
-
-
-
-  
-
+.error {
+  margin-left: 3em;
+  margin-top: 2em;
+  font-size: 5em;
+  color: red;
+}

@@ -2,9 +2,18 @@ import { userData } from '../models/userModels'
 import { AverageData } from '../models/userAverageModels'
 import { ActivityData } from '../models/activtyModels'
 import { PerformanceData } from '../models/performanceModels'
-
+import { errorData } from '../models/errorModels'
+import { Link, renderMatches } from 'react-router-dom'
+import { Component } from 'react'
 //création des objets fetch
-export default class Api {
+const error = false
+export default class Api extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      hasError: false,
+    }
+  }
   async getUser(urlId) {
     return fetch(`http://localhost:3000/user/` + urlId)
       .then((response) => response.json())
@@ -19,6 +28,10 @@ export default class Api {
             data.todayScore,
           ),
       )
+      .catch((err) => {
+        const error = true
+        new userData(error)
+      })
   }
 
   async getActivity(urlId) {

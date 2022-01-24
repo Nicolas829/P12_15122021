@@ -2,8 +2,7 @@ import { userData } from '../models/userModels'
 import { AverageData } from '../models/userAverageModels'
 import { ActivityData } from '../models/activtyModels'
 import { PerformanceData } from '../models/performanceModels'
-import { errorData } from '../models/errorModels'
-import { Link, renderMatches } from 'react-router-dom'
+
 import { Component } from 'react'
 //création des objets fetch
 const error = false
